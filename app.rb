@@ -6,7 +6,7 @@ class App < Sinatra::Base
       @reversename = params[:name].reverse
       "#{@reversename}"
     end
-   	 
+
     get "/square/:number" do
       num = params[:number].to_i
       square = num * num
@@ -14,10 +14,10 @@ class App < Sinatra::Base
     end
 
     get "/say/:number/:phrase" do
-      answer = ''
+      answer = ""
 
-      params[:number].to_i.times do
-        answer = params[:phrase]
+      (params[:number].to_i.times do
+        answer += "#{params[:phrase]}\n"
       end
       answer
     end
